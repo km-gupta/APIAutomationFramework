@@ -3,8 +3,8 @@
 <suite name="API test suite">
   <test thread-count="5" name="API login test">
     <classes>
-      <class name="com.api.test.LoginAPITest">
-      </class> <!-- com.api.test.LoginAPITest -->
+      <class name="com.api.test.LoginAPITest"> </class><!-- com.api.test.LoginAPITest -->
+      <class name="com.api.test.GetProfileRequestTest"></class><!-- com.api.test.getProfile -->
     </classes>
   </test> 
 </suite> 
