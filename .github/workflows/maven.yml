@@ -19,5 +19,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - name: Build with Maven
+      run: mvn clean install    
     - name: Suite test Execution
       run: mvn clean test -Dsuite=suite
