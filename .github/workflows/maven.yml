@@ -20,4 +20,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Suite test Execution
-      run: mvn clean test -Dsuite=suite -X
+      run: mvn clean test -Dsurefire.suiteXmlFiles=suite -X
