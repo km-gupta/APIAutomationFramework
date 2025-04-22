@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="After Login Test">
+  <test thread-count="5" name="API change password">
+    <classes>
+      <class name="com.api.test.LoginAPITest"> </class><!-- com.api.test.LoginAPITest -->
+      <class name="com.api.test.ChangePassword"></class><!-- com.api.test.ChangePassword-->
+    </classes>
+  </test> 
+    <test thread-count="5" name="API get profile">
+    <classes>
+      <class name="com.api.test.LoginAPITest"> </class><!-- com.api.test.LoginAPITest -->
+      <class name="com.api.test.ChangePassword"></class><!-- com.api.test.ChangePassword-->
+    </classes>
+  </test> 
+</suite> 

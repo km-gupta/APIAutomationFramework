@@ -14,15 +14,10 @@ public class GetProfileRequestTest {
 
 	@Test
 	void getProfileInfoTest() {
-		LoginRequest loginRequest = new LoginRequest("Demo", "QWEqwe!@#123");
-
-		AuthService authService = new AuthService();
-		
-		Response response = authService.login(loginRequest);
-		LoginResponse loginResponse = response.as(LoginResponse.class);
+		LoginResponse loginResponse = LoginAPITest.loginResponse;
 
 		UserProfileManagementService userPMService = new UserProfileManagementService();
-		response = userPMService.getProfile(loginResponse.getToken());
+		Response response = userPMService.getProfile(loginResponse.getToken());
 
 		UserProfileResponse userProfileResponse = response.as(UserProfileResponse.class);
 		System.out.println(userProfileResponse.getUsername());

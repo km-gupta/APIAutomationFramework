@@ -14,4 +14,9 @@ public class UserProfileManagementService extends BaseService {
 		setAuthToken(token);
 		return putRequest(payload, BASE_PATH + "profile");
 	}
+	
+	public Response changePassword(String token, Object payload) {
+		setAuthToken(token);
+		return putRequest(payload, BASE_PATH + "change-password");
+	}
 }

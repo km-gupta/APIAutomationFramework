@@ -15,23 +15,18 @@ public class UpdateProfileTest {
 
 	@Test
 	void updateProfileTest() {
-		AuthService authService = new AuthService();
-		LoginRequest loginRequest = new LoginRequest("Demo", "QWEqwe!@#123");
-		Response response = authService.login(loginRequest);
-		LoginResponse loginResponse = response.as(LoginResponse.class);
-		System.out.println(response.asPrettyString());
+		LoginResponse loginResponse = LoginAPITest.loginResponse;
 
 		System.out.println("---------------------------------------------");
 
 		UserProfileManagementService userProfileManagementService = new UserProfileManagementService();
-		response = userProfileManagementService.getProfile(loginResponse.getToken());
-		System.out.println(response.asPrettyString());
+
 
 		ProfileRequest profileRequest = new ProfileRequest.Builder().firstName("Karan").lastName("lastname")
 				.email("email@domain.com").mobileNumber("9999999999").build();
 
 		System.out.println("---------------------------------------------");
-		response = userProfileManagementService.updateProfile(loginResponse.getToken(), profileRequest);
+		Response response = userProfileManagementService.updateProfile(loginResponse.getToken(), profileRequest);
 		System.out.println(response.asPrettyString());
 		
 

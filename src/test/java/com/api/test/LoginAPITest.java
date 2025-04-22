@@ -13,18 +13,18 @@ import io.restassured.response.Response;
 
 @Listeners(com.api.listener.TestListener.class)
 public class LoginAPITest {
+	
+	public static LoginResponse loginResponse;
 	@Test
 	public void loginTest() {
 		LoginRequest loginRequest = new LoginRequest("Demo", "QWEqwe!@#123");
 		AuthService authService = new AuthService();
 		Response response = authService.login(loginRequest);
-		LoginResponse loginResponse = response.as(LoginResponse.class);
+		loginResponse = response.as(LoginResponse.class);
 		
 		System.out.println(response.asPrettyString());
-		System.out.println(loginResponse.getToken());
-		
+
 		Assert.assertTrue(loginResponse.getToken() != null);
-		
 		
 	}
 }
